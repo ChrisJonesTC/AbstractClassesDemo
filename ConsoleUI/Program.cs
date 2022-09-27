@@ -16,6 +16,59 @@ namespace ConsoleUI
 
             #region Vehicles
 
+            
+            var vehicles = new List<Vehicle>();
+
+            var car1 = new Car()
+            {
+                HasTrunk = true,
+                Year = "2016",
+                Make = "Toyota",
+                Model = "Camry"
+            };
+            
+            var motorcycle1 = new Motorcycle() 
+            { 
+                HasSideCart = false,
+                Year = "2023",
+                Make = "Honda",
+                Model = "Hornet"
+            };
+            Vehicle vehicle1 = new Car() 
+            {
+                
+                Year = "2016",
+                Make = "Mercedes",
+                Model = "Camry"
+                
+            };
+            Vehicle vehicle2 = new Motorcycle() 
+            {
+               
+                Year = "2016",
+                Make = "Suzuki",
+                Model = "Ninja",
+               
+            };
+
+            vehicles.Add(car1);
+            vehicles.Add(motorcycle1);
+            vehicles.Add(vehicle1);
+            vehicles.Add(vehicle2);
+
+            foreach (var vehicle in vehicles)
+            {
+                Console.WriteLine($"Year: {vehicle.Year}");
+                Console.WriteLine($"Make: {vehicle.Make}");
+                Console.WriteLine($"Model: {vehicle.Model}");
+                Console.WriteLine();
+                vehicle.DriveAbstract();
+                vehicle.DriveVirtual();
+                Console.WriteLine();
+            }
+
+
+
             /*
              * Create an abstract class called Vehicle
              * The vehicle class shall have three string properties Year, Make, and Model
@@ -46,7 +99,7 @@ namespace ConsoleUI
 
             // Call each of the drive methods for one car and one motorcycle
 
-            #endregion            
+            #endregion
             Console.ReadLine();
         }
     }
